@@ -1,6 +1,16 @@
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
 
 body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
   font-family: 'Poppins', sans-serif;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 * {

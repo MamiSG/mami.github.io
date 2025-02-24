@@ -1,3 +1,21 @@
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    font-family: Poppins;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
 
 :root {
     --background: #3C343D;
@@ -10,14 +28,6 @@
     box-sizing: border-box;  
 }
 
-body {
-    font-family: Poppins;
-    height: 100vh;
-    display: grid;
-    place-items: center;
-}
-
-/* Botão de voltar */
 .back-button {
     position: fixed;
     top: 20px;
@@ -59,7 +69,6 @@ body {
     background-image: url("assets/winter_forest.jpg");
 }
 
-/* Melhor legibilidade do texto */
 section {
     padding: 4rem 10%;
     text-align: center;
@@ -83,35 +92,65 @@ section > p {
 .parallax-image-01 {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Mantém o texto à esquerda e a imagem à direita */
+    justify-content: space-between; 
     padding: 5%;
-    height: 100vh; /* Garante que ocupa toda a tela */
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
-.parallax-text {
-    position: relative;
-    z-index: 2; /* Garante que o texto fique sobre o fundo */
-    color: white; /* Ajuste conforme o fundo */
+.texto-aparecendo {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    z-index: 2; 
+    color: white; 
     font-family: "Arial", sans-serif;
-    text-align: left;
 }
 
-.parallax-text h1 {
+.imagem-aparecendo {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.texto-aparecendo h1 {
     font-size: 6.5rem;
     font-weight: bold;
     margin: 0;
 }
 
-.parallax-text h2 {
+.texto-aparecendo h2 {
     font-size: 5.5rem;
     font-weight: lighter;
     margin: 0;
 }
 
-/* Ajusta a imagem no lado direito */
-.parallax-img {
+.imagem-aparecendo {
     position: absolute;
     right: 0;
     bottom: 0;

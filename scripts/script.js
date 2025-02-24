@@ -27,3 +27,20 @@ gsap.utils.toArray("section").forEach((section, i) => {
     }
   );
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("loaded");
+});
+
+document.querySelectorAll('a').forEach(link => {
+    if (link.hostname === window.location.hostname) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = this.href;
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); 
+        });
+    }
+});

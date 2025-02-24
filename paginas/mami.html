@@ -17,11 +17,11 @@
         <a href="../index.html" class="back-button">← Voltar</a>
     
         <div class="parallax-image parallax-image-01">
-            <div class="parallax-text">
+            <div class="texto-aparecendo">
                 <h1>OLÁ,</h1>
                 <h2>eu sou a Liz!</h2>
             </div>
-            <img src="assets/Liz_Art.png" alt="Personagem" class="parallax-img">
+            <img src="assets/Liz_Art.png" alt="Imagem de Liz" class="imagem-aparecendo">
         </div>
     
         <section>
@@ -42,5 +42,23 @@
             <h2>Contato</h2>
             <p>Adicione informações para quem quiser entrar em contato ou ver mais projetos.</p>
         </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                document.body.classList.add("loaded");
+            });
+        
+            document.querySelectorAll('a').forEach(link => {
+                if (link.hostname === window.location.hostname) {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const href = this.href;
+                        document.body.classList.add("fade-out");
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 500);
+                    });
+                }
+            });
+        </script>
     </body>
 </html>
