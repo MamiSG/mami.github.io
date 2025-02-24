@@ -17,6 +17,26 @@ body {
     place-items: center;
 }
 
+/* Botão de voltar */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background: #ffffff;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background: #f0f0f0;
+}
+
 .parallax-image {
     display: block;
     height: 58.75rem;
@@ -27,7 +47,7 @@ body {
 }
 
 .parallax-image-01 {
-    background-image: url("assets/autumn_forest.jpg");
+    background-image: url("assets/gradient-purple.jpg");
 }
 
 .parallax-image-02 {
@@ -38,12 +58,64 @@ body {
 .parallax-image-03 {
     background-image: url("assets/winter_forest.jpg");
 }
+
+/* Melhor legibilidade do texto */
 section {
-    padding: 4rem;
+    padding: 4rem 10%;
+    text-align: center;
 }
 
 section > h2 {
     text-transform: uppercase;
     margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
 }
-  
+
+section > p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.parallax-image-01 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantém o texto à esquerda e a imagem à direita */
+    padding: 5%;
+    height: 100vh; /* Garante que ocupa toda a tela */
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-text {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique sobre o fundo */
+    color: white; /* Ajuste conforme o fundo */
+    font-family: "Arial", sans-serif;
+    text-align: left;
+}
+
+.parallax-text h1 {
+    font-size: 6.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.parallax-text h2 {
+    font-size: 5.5rem;
+    font-weight: lighter;
+    margin: 0;
+}
+
+/* Ajusta a imagem no lado direito */
+.parallax-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+}
