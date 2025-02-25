@@ -50,6 +50,33 @@ body.loaded {
     opacity: 0.6;
 }
 
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 30px; 
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.nav-dot.active {
+    background: white;
+    transform: scale(1.4);
+}
+
 .parallax-image {
     display: block;
     height: 58.75rem;

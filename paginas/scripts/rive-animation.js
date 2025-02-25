@@ -30,3 +30,51 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.sidebar a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".parallax-image");
+    const navDots = document.querySelectorAll(".nav-dot");
+
+    function highlightCurrentSection() {
+        let currentSection = null;
+
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop - window.innerHeight / 3;
+            const sectionBottom = sectionTop + section.clientHeight;
+
+            if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                currentSection = index;
+            }
+        });
+
+        navDots.forEach((dot, index) => {
+            dot.classList.remove("active");
+            if (index === currentSection) {
+                dot.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", highlightCurrentSection);
+    highlightCurrentSection(); 
+});
+
+
+
