@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Scratchy";
+    src: url("assets/fonts/Scratchy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -29,22 +36,18 @@ body.loaded {
 }
 
 .back-button {
-    position: fixed;
+    position: absolute; 
     top: 20px;
     left: 20px;
-    padding: 10px 15px;
-    background: #ffffff;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-    z-index: 1000;
+    font-size: 1.5rem;
+    color: white; 
+    text-decoration: none; 
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000; 
 }
 
 .back-button:hover {
-    background: #f0f0f0;
+    opacity: 0.6;
 }
 
 .parallax-image {
@@ -61,17 +64,48 @@ body.loaded {
 }
 
 .parallax-image-02 {
-    background-image: url("assets/forest_pathway.jpg");
+    background-color: #E6EBEF;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 5%; 
+    height: 100vh;
+}
 
+.text-left, .text-right {
+    font-size: 4rem;
+    line-height: 1;
+    color: rgb(34, 34, 34);
+    width: 30%; 
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+#riveBox {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%); 
+    width: 90%; 
+    height: auto;
 }
 
 .parallax-image-03 {
     background-image: url("assets/winter_forest.jpg");
+    z-index: 10;
 }
 
 section {
+    position: relative;
     padding: 4rem 10%;
     text-align: center;
+    z-index: 10;
 }
 
 section > h2 {
